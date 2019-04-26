@@ -1,0 +1,24 @@
+# .gqlgen.yml example
+#
+# Refer to https://gqlgen.com/config/
+# for detailed .gqlgen.yml documentation.
+
+schema:
+  - ../schema/schema.graphql
+exec:
+  filename: generated.go
+model:
+  filename: models_gen.go
+resolver:
+  filename: resolver.go
+  type: Resolver
+models:
+  Todo:
+    model: pepego/backend.Todo
+    fields:
+      tags:
+        resolver: true
+      user:
+        resolver: true
+      lastEditedBy:
+        resolver: true
